@@ -1,0 +1,8 @@
+[databases]
+kondareddy1036.mylabserver.com ansible_user=user
+
+[other]
+kondareddy1035.mylabserver.com
+kondareddy1036.mylabserver.com
+
+

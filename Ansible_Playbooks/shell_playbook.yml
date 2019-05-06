@@ -1,0 +1,6 @@
+---
+- hosts: testing
+  tasks: 
+   - name: data into file
+     shell: echo "testing" > testfileShell
+

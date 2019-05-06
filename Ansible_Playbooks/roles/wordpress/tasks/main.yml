@@ -1,0 +1,10 @@
+- unarchive:
+    src: https://wordpress.org/latest.tar.gz
+    dest: /tmp/
+    remote_src: True
+- name: remove html folder
+  command: /usr/bin/rm -rf /var/www/html
+- name: move the wordpess
+  command: /usr/bin/mv /tmp/wordpress /var/www/html
+- name: copy the template to the  hosts
+  template: src=wp-config.j2 dest=/var/www/html/wp-config.php

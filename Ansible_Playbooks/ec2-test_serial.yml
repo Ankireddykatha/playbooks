@@ -1,0 +1,11 @@
+---
+- hosts: centos
+  become: yes
+  serial: 
+     - 1
+     - 2
+     - "20%"
+  tasks:
+  - name: install elinks
+    yum: name=elinks state=latest
+

@@ -1,0 +1,4 @@
+---
+- hosts: centos
+  tasks:
+    - debug: msg="The server Date {{ ansible_date_time.date }} Time {{ ansible_date_time.hour }}:{{ansible_date_time.minute}}"

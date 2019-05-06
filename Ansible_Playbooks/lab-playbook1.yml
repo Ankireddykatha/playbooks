@@ -1,0 +1,12 @@
+---
+- hosts: centos
+  become: yes
+  tasks:
+  - user:
+      name: newuser
+      comment: "New user"
+  - name: upload file to traget if it doesnt exist
+    copy:
+      src: /opt/program1.sh
+      dest: /home/newuser/program1.sh
+      mode: 0755

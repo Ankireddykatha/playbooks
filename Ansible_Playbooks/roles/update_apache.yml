@@ -1,0 +1,6 @@
+--- # Put the Hostname in the index.html
+- hosts: centos
+  become: yes
+  roles:
+    - apache-webserver
+    - customize-apache

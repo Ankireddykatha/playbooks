@@ -1,0 +1,15 @@
+---
+- hosts: centos
+  become: yes
+  tasks:
+    - name: install httpd server
+      yum: name=httpddd state=latest
+      ignore_errors: yes
+      register: there
+      tags: 
+        - packages   
+    - name: start httpd if there
+      service: name=httpd state=started
+      register: running
+      tags:
+        - startup   

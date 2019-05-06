@@ -1,0 +1,6 @@
+--- # Master playbook to install apache
+
+- hosts: centos
+  become: yes
+  roles:
+    - apache-webserver

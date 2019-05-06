@@ -1,0 +1,9 @@
+---
+- hosts: testing
+  tasks:
+    - name: Add host name to config
+      lineinfile: 
+       dest: /home/ansible/hostname.conf
+       regexp: ^Hostname=.*
+       insertafter: ^# Hostname=
+       line: Hostname={{ ansible_hostname }}

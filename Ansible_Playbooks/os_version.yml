@@ -1,0 +1,5 @@
+---
+- hosts: centos
+  tasks:
+    - debug: msg="The Server OS is {{ansible_distribution}}--{{ansible_distribution_major_version}}"
+

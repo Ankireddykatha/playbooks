@@ -1,0 +1,19 @@
+---
+- hosts: testing
+  tasks:
+  - name: Upload a file to the target if it doesnt exist 
+    copy:
+     src: /opt/program1.sh
+     dest: /home/ansible/program1.sh
+     mode: 0755
+  - name: if the line not ther then add it 
+    lineinfile:
+      state: present
+      dest: /home/ansible/program1.sh
+      regexp: '^HOSTNAME='
+      line: HOSTNAME={{ansible_hostname}}
+  - name: Run the Program
+    shell: /home/ansible/program1.sh
+    register: program_output
+  - debug: msg="stdout={{program_output}}"
+

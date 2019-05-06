@@ -1,0 +1,4 @@
+---
+- hosts: centos
+  tasks:
+   - include: tasks/main.yml

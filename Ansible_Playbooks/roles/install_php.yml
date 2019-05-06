@@ -1,0 +1,9 @@
+--- 
+
+- hosts: centos
+  become: yes
+  roles: 
+    - apache-webserver
+    - install_php
+    - customize-apache
+

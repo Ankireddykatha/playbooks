@@ -1,0 +1,5 @@
+---
+- hosts: centos
+  tasks:
+  - name: Copy ansible inventory file inot client
+    copy: src=/etc/ansible/hosts dest=/home/ansible/hosts

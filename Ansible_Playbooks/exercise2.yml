@@ -1,0 +1,5 @@
+---
+- hosts: centos
+  become: yes
+  tasks:
+   - yum: "name=httpd state=latest"

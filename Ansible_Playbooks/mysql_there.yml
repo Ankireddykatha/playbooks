@@ -1,0 +1,15 @@
+---
+- hosts: centos
+  become: yes
+  tasks:
+    - name: install mysql server
+      yum: name=mysql-proxy state=latest
+      ignore_errors: yes
+      register: there
+      tags: 
+        - packages   
+    - name: start mysql if there
+      service: name=mysql-proxy state=started
+      register: running
+      tags:
+        - startup   
